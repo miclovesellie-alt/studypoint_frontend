@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <meta name="description" content="StudyPoint — a trusted library for study notes, guides, and useful documents." />
+    <title>StudyPoint — Learn from what others know</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#explore" data-view="explore" aria-label="StudyPoint home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M8 6.8c0-1 .8-1.8 1.8-1.8H25v21H9.8A1.8 1.8 0 0 0 8 27.8V6.8Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8 26.7c0-1 .8-1.7 1.8-1.7H25M13 11h7M13 15h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <span>study<span class="brand-accent">point</span></span>
+        </a>
+        <div class="side-label">WORKSPACE</div>
+        <button class="nav-item active" data-view="explore"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></span>Explore<span class="nav-current"></span></button>
+        <button class="nav-item" data-view="library"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 4.5h14v16H5z"/><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4"/></svg></span>My library<span class="side-count" id="library-count">0</span></button>
+        <button class="nav-item" data-view="contribute"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M5 14v5h14v-5"/></svg></span>Contribute</button>
+        <button class="nav-item admin-nav" id="admin-nav" data-view="admin" hidden><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>Admin<span class="nav-current"></span></button>
+        <div class="side-label side-label-gap">YOUR TOPICS</div>
+        <button class="topic-link" data-category="All topics"><span class="topic-dot dot-all"></span>All topics</button>
+        <button class="topic-link" data-category="Business"><span class="topic-dot dot-business"></span>Business</button>
+        <button class="topic-link" data-category="Science"><span class="topic-dot dot-science"></span>Science</button>
+        <button class="topic-link" data-category="Technology"><span class="topic-dot dot-tech"></span>Technology</button>
+        <button class="topic-link" data-category="Humanities"><span class="topic-dot dot-humanities"></span>Humanities</button>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note"><span class="note-spark">✦</span><strong>Knowledge grows<br />when it’s shared.</strong><span>Upload work you have the right to share and earn credits.</span><button data-view="contribute">Start contributing <span>↗</span></button></div>
+          <button class="profile-mini" id="sidebar-profile"><span class="avatar" id="sidebar-avatar">–</span><span class="profile-copy"><strong id="sidebar-name">Sign in</strong><span id="sidebar-role">Create an account</span></span><span class="more-button" aria-hidden="true">•••</span></button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div class="mobile-brand" data-view="explore" role="button" tabindex="0"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none"><path d="M8 6.8c0-1 .8-1.8 1.8-1.8H25v21H9.8A1.8 1.8 0 0 0 8 27.8V6.8Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8 26.7c0-1 .8-1.7 1.8-1.7H25M13 11h7M13 15h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><b>study<span class="brand-accent">point</span></b></div>
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-slash">/</span><strong id="crumb-label">Explore</strong></div>
+          <div class="topbar-actions"><button class="help-button" id="help-button" aria-label="Help and information"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.4 2.4 0 1 1 4.1 1.7c-1 .9-1.8 1.2-1.8 2.5M12 16.7h.01"/></svg></button><button class="credit-pill" id="credit-button"><span class="credit-gem">✦</span><span id="credit-count">0</span><span class="credit-word">credits</span><span class="pill-divider"></span><span class="add-credit">+</span></button><button class="avatar avatar-top" id="profile-button" aria-label="Account">–</button></div>
+        </header>
+        <div id="view-root"></div>
+        <footer class="footer"><span>© <span id="copyright-year"></span> StudyPoint</span><span><a href="#about" id="about-link">About</a><a href="#guidelines" id="guidelines-link">Community guidelines</a></span></footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
